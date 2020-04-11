@@ -111,7 +111,7 @@
   var bodyNode = document.getElementById("body");
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
-          if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += "\r\n ";
+          if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += " \r\n";
           bodyNode.value += between(min, max);
           
           if(withNewLine == false) bodyNode.value += " "; 
@@ -137,7 +137,7 @@
         var bodyNode = document.getElementById("body");
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
-          if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += "\r\n ";
+          if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += " \r\n";
           bodyNode.value += betweenDouble(min, max).toFixed(point);
           
           if(withNewLine == false) bodyNode.value += " "; 
@@ -160,7 +160,7 @@
         var bodyNode = document.getElementById("body");
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
-          if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += "\r\n ";
+          if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += " \r\n";
           var str = "";
           var pat = "";
           if(allowDigit) {
