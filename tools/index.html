@@ -95,7 +95,7 @@
     rangeNode.innerHTML = '';
     var selectedType = document.getElementById('selector').value;
     if(selectedType == "Integer") {
-      rangeNode.innerHTML += 'Min<input type="number" id="intMin" class="form-control" value="1">Max<input type="number" id="intMax" class="form-control" value="100">Repeat<input type="number" id="repeat" class="form-control" value="1"><input id="flag" type="checkbox"> With New Line<br><button class="btn btn-primary" id="addInteger">Add</button>';
+      rangeNode.innerHTML += 'Minimum Value<input type="number" id="intMin" class="form-control" value="1">Maximum Value<input type="number" id="intMax" class="form-control" value="100">Repeat<input type="number" id="repeat" class="form-control" value="1"><input id="flag" type="checkbox"> With New Line<br><button class="btn btn-primary" id="addInteger">Add</button>';
         document.getElementById('addInteger').addEventListener('click', function() {
         var repeat = document.getElementById('repeat').value;
         if(repeat > 10000) {
@@ -104,7 +104,11 @@
         }
         var max = document.getElementById('intMax').value;
         var min = document.getElementById('intMin').value;
-        var bodyNode = document.getElementById("body");
+        if(min > max) {
+          alert("Minimum value should be less than maximum value");
+          return;
+        }
+	var bodyNode = document.getElementById("body");
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
           if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += "\r\n";
@@ -116,7 +120,7 @@
     }
 
     if(selectedType == "Double") {
-      rangeNode.innerHTML += 'Min<input type="number" id="doubleMin" class="form-control" value="1">Max<input type="number" id="doubleMax" class="form-control" value="100">Fixed Point<input type="number" id="point" class="form-control" value="3">Repeat<input type="number" id="repeat" class="form-control" value="1"><input id="flag" type="checkbox"> With New Line<br><button class="btn btn-primary" id="addDouble">Add</button>';
+      rangeNode.innerHTML += 'Minimum Value<input type="number" id="doubleMin" class="form-control" value="1">Maximum Value<input type="number" id="doubleMax" class="form-control" value="100">Fixed Point<input type="number" id="point" class="form-control" value="3">Repeat<input type="number" id="repeat" class="form-control" value="1"><input id="flag" type="checkbox"> With New Line<br><button class="btn btn-primary" id="addDouble">Add</button>';
         document.getElementById('addDouble').addEventListener('click', function() {
         var repeat = document.getElementById('repeat').value;
         if(repeat > 10000) {
@@ -125,7 +129,11 @@
         }
         var max = document.getElementById('doubleMax').value;
         var min = document.getElementById('doubleMin').value;
-        var point = document.getElementById('point').value;
+        if(min > max) {
+          alert("Minimum value should be less than maximum value");
+          return;
+        }
+	var point = document.getElementById('point').value;
         var bodyNode = document.getElementById("body");
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
