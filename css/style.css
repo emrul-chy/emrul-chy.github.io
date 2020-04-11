@@ -27,3 +27,7 @@ h5 {
 #problem {
 	text-decoration: none;
 }
+
+input, select, button {
+  margin-bottom: 10px;
+}
