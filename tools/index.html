@@ -157,7 +157,7 @@
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
           if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += " \r\n";
-          bodyNode.value += parseFloat(betweenDouble(min, max).toFixed(point) + min);
+          bodyNode.value += parseFloat(betweenDouble(min, max) + min).toFixed(point);
           
           if(withNewLine == false) bodyNode.value += " "; 
         }
