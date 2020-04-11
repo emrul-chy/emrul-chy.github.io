@@ -116,6 +116,9 @@
           
           if(withNewLine == false) bodyNode.value += " "; 
         }
+        if(withNewLine == true) {
+          bodyNode.value += " ";
+        }
       });
     }
 
@@ -133,7 +136,7 @@
           alert("Minimum value should be less than maximum value");
           return;
         }
-  var point = document.getElementById('point').value;
+        var point = document.getElementById('point').value;
         var bodyNode = document.getElementById("body");
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
@@ -141,6 +144,9 @@
           bodyNode.value += betweenDouble(min, max).toFixed(point);
           
           if(withNewLine == false) bodyNode.value += " "; 
+        }
+        if(withNewLine == true) {
+          bodyNode.value += " ";
         }
       });
     }
@@ -184,6 +190,9 @@
           }
           bodyNode.value += str;
           if(withNewLine == false) bodyNode.value += " "; 
+        }
+        if(withNewLine == true) {
+          bodyNode.value += " ";
         }
       });
     }
