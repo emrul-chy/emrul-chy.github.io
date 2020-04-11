@@ -108,11 +108,15 @@
           alert("Minimum value should be less than maximum value");
           return
         }
+        if(parseInt(max) > 1000000000) {
+          alert("Maximum range is 1000000000");
+          return;
+        }
   var bodyNode = document.getElementById("body");
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
           if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += " \r\n";
-          bodyNode.value += between(min, max);
+          bodyNode.value += parseInt(between(min, max));
           
           if(withNewLine == false) bodyNode.value += " "; 
         }
@@ -141,7 +145,7 @@
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
           if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += " \r\n";
-          bodyNode.value += betweenDouble(min, max).toFixed(point);
+          bodyNode.value += parseFloat(betweenDouble(min, max).toFixed(point));
           
           if(withNewLine == false) bodyNode.value += " "; 
         }
@@ -156,8 +160,8 @@
         document.getElementById('addDouble').addEventListener('click', function() {
         var repeat = document.getElementById('repeat').value;
         var len = document.getElementById('stringLen').value;
-        if(len * repeat > 10000) {
-          alert("Maximum character limit is 10000");
+        if(len * repeat > 100000) {
+          alert("Maximum character limit is 100000");
           return;
         }
         var allowLowerCase = document.getElementById('allowLowerCase').checked;
