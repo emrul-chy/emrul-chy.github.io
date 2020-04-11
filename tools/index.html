@@ -112,6 +112,10 @@
           alert("Maximum range is 1000000000");
           return;
         }
+        if(parseInt(min) < -1000000000) {
+          alert("Maximum range is -1000000000");
+          return;
+        }
         var bodyNode = document.getElementById("body");
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
@@ -138,6 +142,14 @@
         var min = document.getElementById('doubleMin').value;
         if(parseFloat(max) > parseFloat(max)) {
           alert("Minimum value should be less than maximum value");
+          return;
+        }
+        if(parseFloat(max) > 1000000000) {
+          alert("Maximum range is 1000000000");
+          return;
+        }
+        if(parseFloat(min) < -1000000000) {
+          alert("Maximum range is -1000000000");
           return;
         }
         var point = document.getElementById('point').value;
