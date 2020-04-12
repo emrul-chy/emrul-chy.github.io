@@ -90,12 +90,15 @@
 
 <script>
   addRange();
+  function Reset() {
+    document.getElementById('body').value = "";
+  }
   function addRange() {
     var rangeNode = document.getElementById('range');
     rangeNode.innerHTML = '';
     var selectedType = document.getElementById('selector').value;
     if(selectedType == "Integer") {
-      rangeNode.innerHTML += 'Minimum Value<input type="number" id="intMin" class="form-control" value="1">Maximum Value<input type="number" id="intMax" class="form-control" value="100">Repeat<input type="number" id="repeat" class="form-control" value="1"><input id="flag" type="checkbox"> With New Line<br><button class="btn btn-primary" id="addInteger">Add</button>';
+      rangeNode.innerHTML += 'Minimum Value<input type="number" id="intMin" class="form-control" value="1">Maximum Value<input type="number" id="intMax" class="form-control" value="100">Repeat<input type="number" id="repeat" class="form-control" value="1"><input id="flag" type="checkbox"> With New Line<br><button class="btn btn-primary" id="addInteger">Add</button><button style="margin-left: 10px" class="btn btn-secondary" onclick="Reset()">Reset</button>';
         document.getElementById('addInteger').addEventListener('click', function() {
         var repeat = document.getElementById('repeat').value;
         if(repeat > 10000) {
@@ -131,7 +134,7 @@
     }
 
     if(selectedType == "Double") {
-      rangeNode.innerHTML += 'Minimum Value<input type="number" id="doubleMin" class="form-control" value="1">Maximum Value<input type="number" id="doubleMax" class="form-control" value="100">Fixed Point<input type="number" id="point" class="form-control" value="3">Repeat<input type="number" id="repeat" class="form-control" value="1"><input id="flag" type="checkbox"> With New Line<br><button class="btn btn-primary" id="addDouble">Add</button>';
+      rangeNode.innerHTML += 'Minimum Value<input type="number" id="doubleMin" class="form-control" value="1">Maximum Value<input type="number" id="doubleMax" class="form-control" value="100">Fixed Point<input type="number" id="point" class="form-control" value="3">Repeat<input type="number" id="repeat" class="form-control" value="1"><input id="flag" type="checkbox"> With New Line<br><button class="btn btn-primary" id="addDouble">Add</button><button style="margin-left: 10px" class="btn btn-secondary" onclick="Reset()">Reset</button>';
         document.getElementById('addDouble').addEventListener('click', function() {
         var repeat = document.getElementById('repeat').value;
         if(repeat > 10000) {
@@ -168,7 +171,7 @@
     }
 
     if(selectedType == "String") {
-      rangeNode.innerHTML += 'Length<input type="number" id="stringLen" class="form-control" value="10"><input id="allowLowerCase" type="checkbox" checked> Allow Lowercase Character (a - z)<br><input id="allowUpperCase" type="checkbox"> Allow Uppercase Character (A - Z)<br><input id="allowDigit" type="checkbox"> Allow Digit (0 - 9)<br>Repeat<input type="number" id="repeat" class="form-control" value="1"><input id="flag" type="checkbox"> With New Line<br><button class="btn btn-primary" id="addDouble">Add</button>';
+      rangeNode.innerHTML += 'Length<input type="number" id="stringLen" class="form-control" value="10"><input id="allowLowerCase" type="checkbox" checked> Allow Lowercase Character (a - z)<br><input id="allowUpperCase" type="checkbox"> Allow Uppercase Character (A - Z)<br><input id="allowDigit" type="checkbox"> Allow Digit (0 - 9)<br>Repeat<input type="number" id="repeat" class="form-control" value="1"><input id="flag" type="checkbox"> With New Line<br><button class="btn btn-primary" id="addDouble">Add</button><button style="margin-left: 10px" class="btn btn-secondary" onclick="Reset()">Reset</button>';
         document.getElementById('addDouble').addEventListener('click', function() {
         var repeat = document.getElementById('repeat').value;
         var len = document.getElementById('stringLen').value;
