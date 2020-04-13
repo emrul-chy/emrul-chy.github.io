@@ -28,6 +28,6 @@ h5 {
 	text-decoration: none;
 }
 
-input, select, button {
+input, select, button, textarea {
   margin-bottom: 10px;
 }
