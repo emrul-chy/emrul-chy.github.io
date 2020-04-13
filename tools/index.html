@@ -61,6 +61,7 @@
       <div class="col-lg-8">
         <h5>Generated Text</h5>
         <textarea style="font-family: Ubuntu Mono; height: 50vh;" class="form-control" id="body"></textarea>
+        <button class="btn btn-success" id="download-btn">Download</button>
       </div>
     </div>    
   </div>
@@ -224,4 +225,25 @@
   function betweenDouble(min, max) {  
     return (Math.random() * (max - min)) + parseFloat(min);
   }
+  function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+  }
+
+  // Start file download.
+  document.getElementById("download-btn").addEventListener("click", function(){
+    // Generate download of hello.txt file with some content
+    var text = document.getElementById("body").value;
+    var filename = "generated-text-" + Date.now() +".txt";
+      
+    download(filename, text);
+  }, false);
 </script>
