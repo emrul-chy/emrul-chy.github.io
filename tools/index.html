@@ -90,9 +90,11 @@
 </html>
 
 <script>
+  var bodyNode = "";
   addRange();
   function Reset() {
     document.getElementById('body').value = "";
+    bodyNode = "";
   }
   function addRange() {
     var rangeNode = document.getElementById('range');
@@ -104,6 +106,9 @@
         var repeat = document.getElementById('repeat').value;
         if(repeat > 10000) {
           alert("Repeat limit is 10000");
+          return;
+        }
+        if(repeat < 1) {
           return;
         }
         var max = document.getElementById('intMax').value;
@@ -120,16 +125,26 @@
           alert("Maximum range is -1000000000");
           return;
         }
-        var bodyNode = document.getElementById("body");
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
-          if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += " \r\n";
-          bodyNode.value += parseInt(between(min, max));
+          if(withNewLine == true && bodyNode.length > 0) {
+            if(bodyNode[bodyNode.length - 1] == " ")
+              bodyNode += "^";
+            else if(bodyNode[bodyNode.length - 1] != "^")
+              bodyNode += " ^";
+          }
+          bodyNode += parseInt(between(min, max));
           
-          if(withNewLine == false) bodyNode.value += " "; 
+          if(withNewLine == false) bodyNode += " "; 
         }
         if(withNewLine == true) {
-          bodyNode.value += " ";
+          bodyNode += " ^";
+        }
+        //bodyNode = bodyNode.split(" ^").join("\n");
+        document.getElementById('body').value = bodyNode;
+        document.getElementById('body').value = document.getElementById('body').value.split(" ^").join("\n");
+        if(document.getElementById('body').value[document.getElementById('body').value.length - 1] == " ") {
+          document.getElementById('body').value = document.getElementById('body').value.slice(0, -1);
         }
       });
     }
@@ -140,6 +155,9 @@
         var repeat = document.getElementById('repeat').value;
         if(repeat > 10000) {
           alert("Repeat limit is 10000");
+          return;
+        }
+        if(repeat < 1) {
           return;
         }
         var max = document.getElementById('doubleMax').value;
@@ -157,16 +175,28 @@
           return;
         }
         var point = document.getElementById('point').value;
-        var bodyNode = document.getElementById("body");
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
-          if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += " \r\n";
-          bodyNode.value += parseFloat(betweenDouble(min, max).toFixed(point));
+          if(withNewLine == true && bodyNode.length > 0) {
+            if(bodyNode[bodyNode.length - 1] == " ")
+              bodyNode += "^";
+            else if(bodyNode[bodyNode.length - 1] != "^")
+              bodyNode += " ^";
+            else
+              bodyNode += " ^";
+          }
+          bodyNode += parseFloat(betweenDouble(min, max).toFixed(point));
           
-          if(withNewLine == false) bodyNode.value += " "; 
+          if(withNewLine == false) bodyNode += " "; 
         }
         if(withNewLine == true) {
-          bodyNode.value += " ";
+          bodyNode += " ^";
+        }
+        //bodyNode = bodyNode.split(" ^").join("\n");
+        document.getElementById('body').value = bodyNode;
+        document.getElementById('body').value = document.getElementById('body').value.split(" ^").join("\n");
+        if(document.getElementById('body').value[document.getElementById('body').value.length - 1] == " ") {
+          document.getElementById('body').value = document.getElementById('body').value.slice(0, -1);
         }
       });
     }
@@ -175,6 +205,9 @@
       rangeNode.innerHTML += 'Length<input type="number" id="stringLen" class="form-control" value="10"><input id="allowLowerCase" type="checkbox" checked> Allow Lowercase Character (a - z)<br><input id="allowUpperCase" type="checkbox"> Allow Uppercase Character (A - Z)<br><input id="allowDigit" type="checkbox"> Allow Digit (0 - 9)<br>Repeat<input type="number" id="repeat" class="form-control" value="1"><input id="flag" type="checkbox"> With New Line<br><button class="btn btn-primary" id="addDouble">Add</button><button style="margin-left: 10px" class="btn btn-secondary" onclick="Reset()">Reset</button>';
         document.getElementById('addDouble').addEventListener('click', function() {
         var repeat = document.getElementById('repeat').value;
+        if(repeat < 1) {
+          return;
+        }
         var len = document.getElementById('stringLen').value;
         if(len * repeat > 10000) {
           alert("Maximum character limit is 10000");
@@ -183,10 +216,16 @@
         var allowLowerCase = document.getElementById('allowLowerCase').checked;
         var allowUpperCase = document.getElementById('allowUpperCase').checked;
         var allowDigit = document.getElementById('allowDigit').checked;
-        var bodyNode = document.getElementById("body");
         var withNewLine = document.getElementById('flag').checked;
         for(var i = 0; i < repeat; i++) {
-          if(withNewLine == true && bodyNode.value.length > 0) bodyNode.value += " \r\n";
+          if(withNewLine == true && bodyNode.length > 0) {
+            if(bodyNode[bodyNode.length - 1] == " ")
+              bodyNode += "^";
+            else if(bodyNode[bodyNode.length - 1] != "^")
+              bodyNode += " ^";
+            else
+              bodyNode += " ^";
+          }
           var str = "";
           var pat = "";
           if(allowDigit) {
@@ -208,11 +247,17 @@
             var pos = between(0, pat.length - 1);
             str += pat[pos];
           }
-          bodyNode.value += str;
-          if(withNewLine == false) bodyNode.value += " "; 
+          bodyNode += str;
+          if(withNewLine == false) bodyNode += " "; 
         }
         if(withNewLine == true) {
-          bodyNode.value += " ";
+          bodyNode += " ^";
+        }
+        //bodyNode = bodyNode.split(" ^").join("\n");
+        document.getElementById('body').value = bodyNode;
+        document.getElementById('body').value = document.getElementById('body').value.split(" ^").join("\n");
+        if(document.getElementById('body').value[document.getElementById('body').value.length - 1] == " ") {
+          document.getElementById('body').value = document.getElementById('body').value.slice(0, -1);
         }
       });
     }
@@ -226,6 +271,7 @@
     return (Math.random() * (max - min)) + parseFloat(min);
   }
   function download(filename, text) {
+    if(bodyNode[bodyNode.length - 1] != "^") text += "\n";
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', filename);
