@@ -69,7 +69,7 @@ function func() {
 		  		div.innerHTML += "Start Time: " + new Date(response[i].start_time);
 		  		append(li, div);
 
-		  		div = document.createElement('h6');
+		  		div = document.createElement('h5');
 
 		  		if (Math.floor(response[i].duration/(3600)) > 1) {
 		  			div.innerHTML += "Duration: " + Math.floor(response[i].duration/ 3600) + " Hours";
