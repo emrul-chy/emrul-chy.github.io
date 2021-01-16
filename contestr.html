@@ -67,9 +67,19 @@ function func() {
 
 		  		div = document.createElement('h5');
 
-		  		if (Math.floor(response[i].duration/(3600)) > 0) {
+		  		if (Math.floor(response[i].duration/(3600)) > 1) {
 		  			div.innerHTML += "Duration: " + Math.floor(response[i].duration/ 3600) + " Hours";
 		  			txt.innerHTML += "<br>Duration: " + Math.floor(response[i].duration/ 3600) + " Hours";
+
+		  			if (parseInt(response[i].duration) % 3600 != 0) {
+		  				div.innerHTML += " " + Math.floor((parseInt(response[i].duration) % 3600) / 60) + " Minutes";
+		  				txt.innerHTML += " " + Math.floor((parseInt(response[i].duration) % 3600) / 60) + " Minutes";
+		  			}
+
+		  			append(li, div);
+		  		} else if (Math.floor(response[i].duration/(3600)) > 0) {
+		  			div.innerHTML += "Duration: " + Math.floor(response[i].duration/ 3600) + " Hour";
+		  			txt.innerHTML += "<br>Duration: " + Math.floor(response[i].duration/ 3600) + " Hour";
 
 		  			if (parseInt(response[i].duration) % 3600 != 0) {
 		  				div.innerHTML += " " + Math.floor((parseInt(response[i].duration) % 3600) / 60) + " Minutes";
