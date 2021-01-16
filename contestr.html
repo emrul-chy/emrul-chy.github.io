@@ -18,9 +18,9 @@
 	<body onload="func()">
 		<div class="container-fluid" style="padding: 20px">
 			<h2>ContestR - Upcoming Contests in Next 24 Hours</h2>
-			<ul id="contests" class="list-group"></ul>
+			<ul style="margin-top: 20px" id="contests" class="list-group"></ul>
 			<hr>
-			<h5 style="margin-top: 20px">Text Format <button class="btn btn-info btn-sm" onclick="copyFunc()" id="copy-btn">Copy Text</button></h5>
+			<h5 style="margin-top: 20px">Text Format <button class="btn btn-secondary btn-sm" onclick="copyFunc()" id="copy-btn">Copy</button></h5>
 			<div class="card card-body" id="text">Upcoming Contests in Next 24 Hours<br><br></div>
 		</div>
 
@@ -49,23 +49,27 @@ function func() {
 	  		return a.start_time - b.start_time;
 	  	});
 	  	for (var i = 0; i < response.length; i++) {
-	  		if (response[i].in_24_hours == "Yes") {
+	  		if (response[i].in_24_hours == "Yes" && new Date(response[i].start_time) > new Date()) {
 		  		let li = createNode('li');
-		  		let h4 = createNode('h4');
+		  		let h5 = createNode('h5');
+		  		let bold = createNode('b');
+		  		append(h5, bold);
+
+		  		h5.setAttribute('style', 'font-weight:bold');
 		  		li.className = "list-group-item";
 		  		let p = document.createTextNode(response[i].site + " " + response[i].name);
 
 		  		txt.innerHTML += "# " + response[i].site + " " + response[i].name;
 		  		txt.innerHTML += "<br>Start Time: " + new Date(response[i].start_time);
-		  	//	 + " " + new Date(response[i].start_time)
-		  		append(h4, p);
-		  		append(li, h4);
+
+		  		append(h5, p);
+		  		append(li, h5);
 
 		  		let div = document.createElement('h5');
 		  		div.innerHTML += "Start Time: " + new Date(response[i].start_time);
 		  		append(li, div);
 
-		  		div = document.createElement('h5');
+		  		div = document.createElement('h6');
 
 		  		if (Math.floor(response[i].duration/(3600)) > 1) {
 		  			div.innerHTML += "Duration: " + Math.floor(response[i].duration/ 3600) + " Hours";
@@ -105,6 +109,8 @@ function func() {
 		  		a.setAttribute('role', 'button');
 		  		a.setAttribute('class', 'btn btn-primary btn-sm');
 
+		  		li.setAttribute('style', 'padding-bottom:30px')
+
 		  		append(a, p);
 		  		append(li, a);
 		  		append(ul, li);
@@ -134,6 +140,6 @@ async function copyFunc() {
   window.getSelection().removeAllRanges();
 
   document.getElementById('copy-btn').innerHTML = "Copied";
-  document.getElementById('copy-btn').setAttribute('class', 'btn btn-info btn-sm disabled')
+  document.getElementById('copy-btn').setAttribute('class', 'btn btn-secondary btn-sm disabled')
 }
 </script>
