@@ -95,7 +95,7 @@ function func() {
 		  		} else {
 		  			if (parseInt(response[i].duration) % 3600 != 0) {
 		  				div.innerHTML += "Duration: " + Math.floor(response[i].duration / 60) + " Minutes";
-		  				txt.innerHTML += "Duration: " + Math.floor(response[i].duration / 60) + " Minutes";
+		  				txt.innerHTML += "<br>Duration: " + Math.floor(response[i].duration / 60) + " Minutes";
 		  			}
 
 		  			append(li, div);
