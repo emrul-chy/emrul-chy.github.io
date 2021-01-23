@@ -58,9 +58,20 @@ function func() {
 
 		  		h5.setAttribute('style', 'font-weight:bold');
 		  		li.className = "list-group-item";
-		  		let p = document.createTextNode(response[i].site + " " + response[i].name);
 
-		  		txt.innerHTML += "# " + response[i].site + " " + response[i].name;
+		  		let contestName = response[i].name;
+
+		  		if (contestName.length >= response[i].site.length) {
+			  		if (contestName.substr(0, response[i].site.length) != response[i].site) {
+			  			contestName = response[i].site + " " + contestName;
+			  		}
+			  	} else {
+			  		contestName = response[i].site + " " + contestName;
+			  	}
+
+		  		let p = document.createTextNode(contestName);
+
+		  		txt.innerHTML += ">> " + contestName;
 		  		txt.innerHTML += "<br>Start Time: " + new Date(response[i].start_time);
 
 		  		append(h5, p);
