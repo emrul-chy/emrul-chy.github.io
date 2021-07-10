@@ -62,7 +62,7 @@ function func() {
 		  		let contestName = response[i].name;
 
 		  		if (contestName.length >= response[i].site.length) {
-			  		if (contestName.substr(0, response[i].site.length) != response[i].site) {
+			  		if (contestName.substr(0, response[i].site.length).toLowerCase()  != response[i].site.toLowerCase()) {
 			  			contestName = response[i].site + " " + contestName;
 			  		}
 			  	} else {
