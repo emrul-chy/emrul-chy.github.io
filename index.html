@@ -1,82 +1,374 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-
+<html lang="en">
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/style.css">
-  <title>Hello, world!</title>
-
-  <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon' />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Emrul Chowdhury - Software Engineer</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/modern-style.css">
+    
+    <!-- Favicon -->
+    <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon' />
 </head>
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-  <a class="navbar-brand" href="./index.html">Md. Emrul Chowdhury</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="competitive-programming-profile.html">Competitive Programming Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="problem-setting-profile.html">Problem Setting Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="career-background.html">Career Background</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tools/index.html">Tools</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tutorials/index.html">Tutorials</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top modern-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="./index.html">
+                <span class="brand-highlight">Emrul</span> Chowdhury
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="competitive-programming-profile.html">Programming</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="problem-setting-profile.html">Problem Setting</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="career-background.html">Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tutorials/index.html">Tutorials</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<body style="position: relative; min-height: 100vh">
-  <div class="container" style="margin-top: 10px; padding-bottom: 200px;    ">
-    <h1>Hello World!</h1>
-    <p>I'm Md. Emrul Chowdhury, a software engineer.  Graduated from the Department of Computer Science &
-      Engineering, Metropolitan University. I'm currently working at Amazon as a Software Development Engineer.</p>
-    <p>After starting my undergraduate program, I started to focus on competitive programming. I participated in 15+
-      national level programming contests with the best result of being top 13 in the rank list. I did regular contests on
-      various online judges including Codeforces, Codechef, Hackerrank etc. In last year of my undergraduate, I focused on software development a little bit, developed few applications using MVC Framework.</p>
-    <p>In case, please contact with me by mailing at <a
-        href="mailto:emrul.chy@gmail.com">emrul.chy@gmail.com</a>.</p>
-  </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <div class="hero-badge mb-3">
+                            <i class="bi bi-code-slash me-2"></i>
+                            Software Development Engineer at Amazon
+                        </div>
+                        
+                        <h1 class="hero-title mb-4">
+                            Hello, I'm <span class="text-gradient">Emrul</span>
+                        </h1>
+                        
+                        <p class="hero-subtitle mb-4">
+                            A seasoned software engineer with 5+ years of experience building scalable 
+                            backend systems. Currently developing high-performance services at Amazon 
+                            for Prime Video, serving millions of users worldwide.
+                        </p>
+                        
+                        <div class="hero-stats mb-5">
+                            <div class="stat-item">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">Amazon</div>
+                                <div class="stat-label">Current Company</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">Backend</div>
+                                <div class="stat-label">Specialization</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-actions">
+                            <a href="#about" class="btn btn-primary btn-lg me-3">
+                                <i class="bi bi-person me-2"></i>About Me
+                            </a>
+                            <a href="mailto:emrul.chy@gmail.com" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-envelope me-2"></i>Get In Touch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="hero-visual">
+                        <div class="code-window">
+                            <div class="window-header">
+                                <div class="window-controls">
+                                    <span class="control red"></span>
+                                    <span class="control yellow"></span>
+                                    <span class="control green"></span>
+                                </div>
+                                <div class="window-title">emrul.cpp</div>
+                            </div>
+                            <div class="code-content">
+                                <div class="code-line">
+                                    <span class="line-number">1</span>
+                                    <span class="code-text"><span class="keyword">#include</span> <span class="string">&lt;iostream&gt;</span></span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">2</span>
+                                    <span class="code-text"><span class="keyword">using namespace</span> std;</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">3</span>
+                                    <span class="code-text"></span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">4</span>
+                                    <span class="code-text"><span class="keyword">int</span> <span class="function">main</span>() {</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">5</span>
+                                    <span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; <span class="string">"Hello World!"</span>;</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">6</span>
+                                    <span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="number">0</span>;</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">7</span>
+                                    <span class="code-text">}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="bi bi-chevron-down"></i>
+            </div>
+        </div>
+    </section>
 
-  <footer class="footer" >
-    <div class="container">
-      <a style="float: right; margin-top: 12px; text-decoration: none;" href="mailto:emrul.chy@gmail.com" class="btn btn-social-icon btn-email"><span class="fa fa-envelope"></span></a>
-      <a style="float: right; margin-top: 12px; text-decoration: none;" target="_blank" href="https://github.com/emrul-chy" class="btn btn-social-icon btn-github"><span class="fa fa-github"></span></a>
-      <a style="float: right; margin-top: 12px; text-decoration: none;" target="_blank" href="https://www.linkedin.com/in/emrul-cse/" class="btn btn-social-icon btn-linkedin"><span class="fa fa-linkedin"></span></a>
-      <a style="float: right; margin-top: 12px; text-decoration: none;" target="_blank" href="https://www.facebook.com/emrul.cse" class="btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
-      <span class="text-muted"> Ⓒ 2020 emrul-chy.github.io | By Md. Emrul Chowdhury</i><span>
-    </div>
-  </footer>
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-header mb-5">
+                        <h2 class="section-title">About Me</h2>
+                        <p class="section-subtitle">
+                            Passionate about solving complex problems through code
+                        </p>
+                    </div>
+                    
+                    <div class="about-content">
+                        <p class="mb-4">
+                            I'm a Software Development Engineer at Amazon with 5+ years of professional 
+                            experience building scalable backend systems. I specialize in developing 
+                            high-performance services using Java, Python, and Kotlin, with extensive 
+                            experience in AWS cloud technologies.
+                        </p>
+                        
+                        <p class="mb-4">
+                            Currently, I work on Prime Video's backend services, focusing on presentation 
+                            layers, performance optimization, and experimentation platforms that serve 
+                            millions of users globally. My expertise spans microservices architecture, 
+                            distributed systems, and A/B testing infrastructure.
+                        </p>
+                        
+                        <p class="mb-4">
+                            My strong foundation in competitive programming has been instrumental in my 
+                            career - I participated in 15+ national programming contests with my best 
+                            achievement being ranked 13th, and solved 2000+ problems across platforms 
+                            like Codeforces (max rating 1835) and CodeChef. This background strengthened 
+                            my algorithmic thinking and problem-solving skills that I apply daily in 
+                            building efficient, scalable systems.
+                        </p>
+                        
+                        <p class="mb-4">
+                            I graduated from Metropolitan University with a degree in Computer Science & 
+                            Engineering, where I also contributed as a problem setter for various 
+                            programming contests, creating 20+ algorithmic problems for the community.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4 class="skill-title">
+                                <i class="bi bi-code-square me-2"></i>Backend Development
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Kotlin</span>
+                                <span class="skill-tag">Microservices</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4 class="skill-title">
+                                <i class="bi bi-cloud me-2"></i>Cloud & Infrastructure
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">AWS Services</span>
+                                <span class="skill-tag">Distributed Systems</span>
+                                <span class="skill-tag">Performance Optimization</span>
+                                <span class="skill-tag">System Design</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4 class="skill-title">
+                                <i class="bi bi-graph-up me-2"></i>Experimentation & Data
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">A/B Testing</span>
+                                <span class="skill-tag">Experimentation Platforms</span>
+                                <span class="skill-tag">Data Analysis</span>
+                                <span class="skill-tag">Metrics & Monitoring</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4 class="skill-title">
+                                <i class="bi bi-trophy me-2"></i>Problem Solving & Algorithms
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Competitive Programming</span>
+                                <span class="skill-tag">Algorithm Design</span>
+                                <span class="skill-tag">Data Structures</span>
+                                <span class="skill-tag">Problem Setting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+    <!-- Quick Links Section -->
+    <section class="quick-links-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Explore My Work</h2>
+                    <p class="section-subtitle">Discover my journey through different domains</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="quick-link-card">
+                        <div class="card-icon">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <h4>Competitive Programming</h4>
+                        <p>Explore my competitive programming journey, achievements, and contest participation.</p>
+                        <a href="competitive-programming-profile.html" class="card-link">
+                            View Profile <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="quick-link-card">
+                        <div class="card-icon">
+                            <i class="bi bi-puzzle"></i>
+                        </div>
+                        <h4>Problem Setting</h4>
+                        <p>Discover the problems I've created and my contribution to the programming community.</p>
+                        <a href="problem-setting-profile.html" class="card-link">
+                            View Problems <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="quick-link-card">
+                        <div class="card-icon">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
+                        <h4>Career Journey</h4>
+                        <p>Learn about my professional experience and career progression in tech.</p>
+                        <a href="career-background.html" class="card-link">
+                            View Career <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="quick-link-card">
+                        <div class="card-icon">
+                            <i class="bi bi-journal-code"></i>
+                        </div>
+                        <h4>Tutorials</h4>
+                        <p>In-depth algorithmic tutorials and competitive programming guides I've written.</p>
+                        <a href="tutorials/index.html" class="card-link">
+                            Read Tutorials <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="footer-brand">
+                        <h5 class="mb-2">Md. Emrul Chowdhury</h5>
+                        <p class="mb-0">Software Development Engineer</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="social-links">
+                        <a href="mailto:emrul.chy@gmail.com" class="social-link" title="Email">
+                            <i class="bi bi-envelope"></i>
+                        </a>
+                        <a href="https://github.com/emrul-chy" target="_blank" class="social-link" title="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/emrul-cse/" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://www.facebook.com/emrul.cse" target="_blank" class="social-link" title="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="copyright mb-0">
+                        © 2025 emrul-chy.github.io | Built with ❤️ by Md. Emrul Chowdhury
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/modern-script.js"></script>
 </body>
-
 </html>
