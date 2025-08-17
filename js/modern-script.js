@@ -21,29 +21,53 @@ function initNavbar() {
         }
     });
     
-    // Active nav link highlighting
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section[id]');
+    // Active nav link highlighting - only for index.html
+    const currentPage = window.location.pathname;
+    const isIndexPage = currentPage.endsWith('index.html') || currentPage === '/' || currentPage.endsWith('/');
     
-    window.addEventListener('scroll', function() {
-        let current = '';
+    if (isIndexPage) {
+        // Original scroll spy functionality for index page
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
         
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+        window.addEventListener('scroll', function() {
+            let current = '';
             
-            if (window.scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href && href.includes(`#${current}`)) {
+                    link.classList.add('active');
+                }
+            });
         });
-        
+    } else {
+        // For other pages, highlight the appropriate nav item based on current page
+        const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
+            const href = link.getAttribute('href');
+            
+            // Check if the link matches the current page
+            if (href && (
+                (currentPage.includes('competitive-programming-profile.html') && href.includes('competitive-programming-profile.html')) ||
+                (currentPage.includes('problem-setting-profile.html') && href.includes('problem-setting-profile.html')) ||
+                (currentPage.includes('career-background.html') && href.includes('career-background.html')) ||
+                (currentPage.includes('tutorials') && href.includes('tutorials'))
+            )) {
                 link.classList.add('active');
             }
         });
-    });
+    }
 }
 
 // Smooth scrolling for anchor links
