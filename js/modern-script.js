@@ -21,11 +21,12 @@ function initNavbar() {
         }
     });
     
-    // Active nav link highlighting - only for index.html
+    // Active nav link highlighting - only for main index.html
     const currentPage = window.location.pathname;
-    const isIndexPage = currentPage.endsWith('index.html') || currentPage === '/' || currentPage.endsWith('/');
+    const isMainIndexPage = currentPage === '/' || currentPage === '/index.html' || (currentPage.endsWith('/index.html') && !currentPage.includes('/tutorials/'));
+    const isTutorialsPage = currentPage.includes('tutorials');
     
-    if (isIndexPage) {
+    if (isMainIndexPage) {
         // Original scroll spy functionality for index page
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('section[id]');
@@ -50,24 +51,34 @@ function initNavbar() {
                 }
             });
         });
-    } else {
-        // For other pages, highlight the appropriate nav item based on current page
+    } else if (!isTutorialsPage) {
+        // For other pages (but NOT tutorials), set active nav item based on current page
         const navLinks = document.querySelectorAll('.nav-link');
+        
         navLinks.forEach(link => {
-            link.classList.remove('active');
             const href = link.getAttribute('href');
+            let shouldBeActive = false;
             
-            // Check if the link matches the current page
-            if (href && (
-                (currentPage.includes('competitive-programming-profile.html') && href.includes('competitive-programming-profile.html')) ||
-                (currentPage.includes('problem-setting-profile.html') && href.includes('problem-setting-profile.html')) ||
-                (currentPage.includes('career-background.html') && href.includes('career-background.html')) ||
-                (currentPage.includes('tutorials') && href.includes('tutorials'))
-            )) {
+            if (href) {
+                // Check each page type explicitly
+                if (currentPage.includes('competitive-programming-profile.html') && href.includes('competitive-programming-profile.html')) {
+                    shouldBeActive = true;
+                } else if (currentPage.includes('problem-setting-profile.html') && href.includes('problem-setting-profile.html')) {
+                    shouldBeActive = true;
+                } else if (currentPage.includes('career-background.html') && href.includes('career-background.html')) {
+                    shouldBeActive = true;
+                }
+            }
+            
+            // Set or remove active class
+            if (shouldBeActive) {
                 link.classList.add('active');
+            } else {
+                link.classList.remove('active');
             }
         });
     }
+    // For tutorials page, do nothing - let HTML handle the active class
 }
 
 // Smooth scrolling for anchor links
